@@ -1,0 +1,1 @@
+// write your custom error page component
