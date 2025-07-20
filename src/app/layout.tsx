@@ -1,4 +1,6 @@
+import LoadingLayout from "@/components/ui/loading-layout";
 import "./globals.css";
+import { Inter } from "next/font/google"
 
 // You can change this to your custom favicon icon, title and description
 export const metadata = {
@@ -8,6 +10,7 @@ export const metadata = {
     icon: 'https://i.postimg.cc/d31q0rXz/Rashedul-Haque-Rasel1.png?height=32&width=32',
   },
 };
+const inter = Inter({ subsets: ["latin"] })
 
 export default function RootLayout({
   children,
@@ -19,6 +22,11 @@ export default function RootLayout({
       <body>
         <main>{children}</main>
       </body>
+      <LoadingLayout>
+        <main className={inter.className}>
+          {children}
+        </main>
+      </LoadingLayout>
     </html>
   );
 }

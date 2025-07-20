@@ -44,7 +44,7 @@ const DecryptingText: React.FC<DecryptingTextProps> = ({ targetText, speed = 8, 
     // Start animation after a small delay
     const timeoutId = setTimeout(() => {
       scramble()
-    }, 500)
+    }, 600)
 
     return () => {
       isMounted = false
