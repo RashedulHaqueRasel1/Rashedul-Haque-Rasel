@@ -2,10 +2,10 @@ import "./globals.css";
 
 // You can change this to your custom favicon icon, title and description
 export const metadata = {
-  title: 'Create Next Base',
-  description: 'A production-ready Next.js starter template crafted by ONTONIM to accelerate your web development workflow. This boilerplate combines modern technologies with enterprise-grade architecture to help you build performant, scalable applications faster.',
+  title: 'Rashedul Haque Rasel - Portfolio',
+  description: 'A portfolio showcasing the skills and projects of Rashedul Haque Rasel, a web developer specializing in full-stack development.',
   icons: {
-    icon: 'https://i.ibb.co/BHMGGW7z/ontonim.png',
+    icon: 'https://i.postimg.cc/d31q0rXz/Rashedul-Haque-Rasel1.png?height=32&width=32',
   },
 };
 

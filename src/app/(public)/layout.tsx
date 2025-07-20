@@ -1,3 +1,4 @@
+import ThemeBackground from "@/components/ui/theme-background";
 import Footer from "../../components/shared/Footer/Footer";
 import Navbar from "../../components/shared/Navbar/Navbar";
 import "../globals.css";
@@ -8,15 +9,17 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>
-        <header>
-          <Navbar />
-        </header>
-        <main>{children}</main>
-        <footer>
-          <Footer />
-        </footer>
-      </body>
+      <ThemeBackground>
+        <body>
+          <header>
+            <Navbar />
+          </header>
+          <main>{children}</main>
+        </body>
+      </ThemeBackground>
+      <footer>
+        <Footer />
+      </footer>
     </html>
   );
 }

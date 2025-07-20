@@ -1,170 +1,102 @@
-
 "use client"
 
-import * as React from "react"
+import type React from "react"
+
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Menu } from "lucide-react"
-
-import { cn } from "@/lib/utils"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { useMobile } from "@/hooks/use-mobile"
+import ThemeToggle from "@/components/ui/theme-toggle"
 
-// Navigation items with dropdown support
-const navigationItems = [
-  { title: "Home", href: "/" },
-  {
-    title: "Services",
-    href: "/services",
-    dropdown: [
-      { title: "Web Development", href: "/services/web-development" },
-      { title: "Mobile Apps", href: "/services/mobile-apps" },
-      { title: "UI/UX Design", href: "/services/design" },
-    ],
-  },
-  {
-    title: "About",
-    href: "/about",
-    dropdown: [
-      { title: "Our Team", href: "/about/team" },
-      { title: "Our Story", href: "/about/story" },
-      { title: "Careers", href: "/about/careers" },
-    ],
-  },
-  { title: "Portfolio", href: "/portfolio" },
-  { title: "Blog", href: "/blog" },
-  { title: "Contact", href: "/contact" },
+const navigation = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Blog", href: "#blog" },
+  { name: "Contact", href: "#contact" },
 ]
 
 export default function Navbar() {
-  const pathname = usePathname()
-  const isMobile = useMobile()
-  const [isScrolled, setIsScrolled] = React.useState(false)
 
-  // Handle scroll effect
-  React.useEffect(() => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+    setIsOpen(false)
+  }
+
+
   return (
     <header
-      className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-white",
-      )}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-[#020617]/80 backdrop-blur-md shadow-lg border-b border-white/10" : "bg-transparent"
+        }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-full bg-primary"></div>
-            <span className="text-xl font-bold">Logo Here</span>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="text-2xl font-bold text-white">
+            Rashedul Haque
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navigationItems.map((item) => (
-              <React.Fragment key={item.title}>
-                {item.dropdown ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant="ghost"
-                        className={cn(
-                          "text-base font-medium transition-colors hover:text-primary",
-                          pathname === item.href ? "text-primary" : "text-foreground",
-                        )}
-                      >
-                        {item.title}
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="center" className="w-48">
-                      {item.dropdown.map((dropdownItem) => (
-                        <DropdownMenuItem key={dropdownItem.title} asChild>
-                          <Link
-                            href={dropdownItem.href}
-                            className={cn("w-full", pathname === dropdownItem.href ? "font-medium text-primary" : "")}
-                          >
-                            {dropdownItem.title}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "text-base font-medium transition-colors hover:text-primary",
-                      pathname === item.href ? "text-primary" : "text-foreground",
-                    )}
-                  >
-                    {item.title}
-                  </Link>
-                )}
-              </React.Fragment>
+          <nav className="hidden md:flex items-center space-x-8">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="text-gray-300 hover:text-purple-400 transition-colors font-medium cursor-pointer"
+              >
+                {item.name}
+              </a>
             ))}
+            {/* <ThemeToggle /> */}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button>Get Started</Button>
+          {/* Mobile Navigation Button */}
+          <div className="md:hidden flex items-center space-x-4">
+            {/* <ThemeToggle /> */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white hover:bg-white/10"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
           </div>
-
-          {/* Mobile Menu */}
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" aria-label="Menu">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[350px]">
-              <div className="flex flex-col px-4 space-y-6 pt-6">
-                {navigationItems.map((item) => (
-                  <div key={item.title} className="space-y-3">
-                    {item.dropdown ? (
-                      <>
-                        <div className="font-medium text-lg">{item.title}</div>
-                        <div className="ml-4 flex flex-col space-y-2">
-                          {item.dropdown.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.title}
-                              href={dropdownItem.href}
-                              className={cn(
-                                "text-base transition-colors hover:text-primary",
-                                pathname === dropdownItem.href ? "font-medium text-primary" : "text-muted-foreground",
-                              )}
-                            >
-                              {dropdownItem.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          "text-lg font-medium transition-colors hover:text-primary",
-                          pathname === item.href ? "text-primary" : "text-foreground",
-                        )}
-                      >
-                        {item.title}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-                <Button className="mt-4 w-full">Get Started</Button>
-              </div>
-            </SheetContent>
-          </Sheet>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isOpen && (
+          <div className="md:hidden bg-[#020617]/95 backdrop-blur-md border-t border-white/10">
+            <nav className="px-4 py-4 space-y-4">
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="block text-gray-300 hover:text-purple-400 transition-colors font-medium cursor-pointer"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   )
