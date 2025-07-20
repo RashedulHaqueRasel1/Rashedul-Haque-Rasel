@@ -136,7 +136,7 @@ export default function Skills() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
         >
           {[
-            { number: "3+", label: "Years Experience" },
+            // { number: "3+", label: "Years Experience" },
             { number: "20+", label: "Projects Completed" },
             { number: "15+", label: "Technologies" },
             { number: "100%", label: "Client Satisfaction" },
