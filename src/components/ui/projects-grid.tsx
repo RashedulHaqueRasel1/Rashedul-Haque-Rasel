@@ -6,7 +6,7 @@ import { ExternalLink, Github } from "lucide-react"
 import { motion } from "framer-motion"
 import { getProjects } from "../../lib/project-data"
 
-const filterOptions = ["All", "Fullstack", "Frontend", "API", "UI/UX"]
+const filterOptions = ["All", "Fullstack", "Frontend"]
 
 interface ProjectsGridProps {
   showAll: boolean
@@ -53,15 +53,29 @@ export default function ProjectsGrid({ showAll }: ProjectsGridProps) {
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
-                <Button size="sm" variant="secondary">
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4 ">
+                {/* Live Demo Link */}
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-3 py-1.5 bg-white/20 text-white rounded hover:bg-white/40 transition-colors"
+                >
                   <ExternalLink className="w-4 h-4 mr-2" />
                   Live Demo
-                </Button>
-                <Button size="sm" variant="secondary">
+                </a>
+
+                {/* Code Link (Optional) */}
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-3 py-1.5 bg-white/20 text-white rounded hover:bg-white/40 transition-colors"
+                >
                   <Github className="w-4 h-4 mr-2" />
                   Code
-                </Button>
+                </a>
+
               </div>
             </div>
 

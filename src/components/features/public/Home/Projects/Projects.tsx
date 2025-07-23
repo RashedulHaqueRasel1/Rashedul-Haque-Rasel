@@ -36,7 +36,7 @@ export default function Projects() {
             <Button
               size="lg"
               variant="outline"
-              className="group bg-transparent text-white border-white hover:bg-white hover:text-gray-900 transition-colors"
+              className="group bg-transparent text-white border-white hover:bg-white hover:text-gray-900 transition-colors hover:cursor-pointer"
             >
               View All Projects
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

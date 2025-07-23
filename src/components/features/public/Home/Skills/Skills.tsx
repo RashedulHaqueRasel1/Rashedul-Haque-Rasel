@@ -85,8 +85,8 @@ const skillCategories = [
     skills: [
       { name: "Git", icon: <SiGit className="text-red-500 text-xl" /> },
       { name: "GitHub", icon: <SiGithub className="text-gray-800 dark:text-white text-xl" /> },
-      { name: "npm", icon: <SiNpm className="text-red-600 text-xl" /> },
-      { name: "pnpm", icon: <SiPnpm className="text-yellow-500 text-xl" /> },
+      // { name: "npm", icon: <SiNpm className="text-red-600 text-xl" /> },
+      // { name: "pnpm", icon: <SiPnpm className="text-yellow-500 text-xl" /> },
       { name: "Figma", icon: <SiFigma className="text-pink-500 text-xl" /> },
       { name: "Canva", icon: <SiCanva className="text-blue-400 text-xl" /> },
       { name: "Chrome Dev Tools", icon: <SiGooglechrome className="text-yellow-500 text-xl" /> },
@@ -198,8 +198,8 @@ export default function SkillsSection() {
         >
           {[
             // { number: "3+", label: "Years Experience" },
-            { number: "20+", label: "Projects Completed" },
-            { number: "15+", label: "Technologies" },
+            { number: "10+", label: "Projects Completed" },
+            { number: "10+", label: "Technologies" },
             { number: "100%", label: "Client Satisfaction" },
           ].map((stat, index) => (
             <motion.div

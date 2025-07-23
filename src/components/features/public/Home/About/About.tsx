@@ -6,25 +6,33 @@ import { motion } from "framer-motion"
 
 const personalInfo = [
     { label: "Name", value: "Rashedul Haque Rasel", icon: "👤" },
-    { label: "Email", value: "rasel@example.com", icon: "📧" },
-    { label: "Location", value: "Dhaka, Bangladesh", icon: "📍" },
-    { label: "Languages", value: "Bengali, English", icon: "🌐" },
+    { label: "Email", value: "rashedulhaquerasel1@gmail.com", icon: "📧" },
+    { label: "Location", value: "Savar, Dhaka, Bangladesh", icon: "📍" },
+    { label: "Languages", value: "Bengali, English (Comfortable)", icon: "🌐" },
 ]
 
 const education = [
     {
-        year: "2020-2024",
-        degree: "Bachelor of Science in Computer Science",
-        institution: "University of Dhaka",
-        description: "Focused on software engineering and web development",
+        year: "2023-running",
+        degree: "Bachelor of Business Administration",
+        institution: {
+            name: "Savar Government College",
+            link: "https://www.savargc.gov.bd/en"
+        },
+        description:
+            "Studying Accounting while learning web development to combine finance knowledge with technical skills for practical solutions..",
     },
     {
-        year: "2018-2020",
+        year: "2020-2022",
         degree: "Higher Secondary Certificate",
-        institution: "Dhaka College",
-        description: "Science background with mathematics and physics",
+        institution: {
+            name: "Kurigram Government College",
+            link: "https://kurigramgc.college.gov.bd/"
+        },
+        description: "Completed HSC in Commerce, focusing on foundational subjects related to accounting business, and economics.",
     },
-]
+];
+
 
 export default function AboutSection() {
     return (
@@ -50,7 +58,7 @@ export default function AboutSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="flex justify-center items-center order-2 lg:order-1 min-h-[20rem]"  
+                        className="flex justify-center items-center order-2 lg:order-1 min-h-[20rem]"
                     >
                         <img
                             src="https://i.postimg.cc/qBNdJcLg/Rashedul-Haque-Rasel.jpg?height=400&width=400"
@@ -72,13 +80,11 @@ export default function AboutSection() {
                         <div>
                             <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">My Story</h3>
                             <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4">
-                                I'm a passionate MERN stack developer with over 3 years of experience in creating modern web
-                                applications. My journey started with curiosity about how websites work, and it has evolved into a deep
-                                love for crafting digital experiences.
+                                I am Rashedul Haque Rasel, a passionate web developer from Bangladesh with a strong focus on building user-friendly and responsive web applications. I have hands-on experience with front-end technologies like React.js, JavaScript (ES6+), HTML5, Tailwind CSS, and back-end tools like Node.js, Express.js, and MongoDB. I enjoy solving real-world problems through clean, scalable code.
+
                             </p>
                             <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                                I specialize in building scalable web applications using React, Node.js, and MongoDB. I'm always eager
-                                to learn new technologies and take on challenging projects that push my skills to the next level.
+                                I’m confident in my front-end skills, I’m currently exploring backend development more deeply to become a skilled full-stack developer. I am always eager to learn new technologies and contribute to impactful projects.
                             </p>
                         </div>
 
@@ -91,14 +97,24 @@ export default function AboutSection() {
                                         <span className="text-xl sm:text-2xl">{info.icon}</span>
                                         <div>
                                             <p className="text-xs sm:text-sm text-gray-400">{info.label}</p>
-                                            <p className="text-sm sm:text-base font-medium text-white">{info.value}</p>
+                                            {info.label === "Email" ? (
+                                                <a
+                                                    href={`mailto:${info.value}`}
+                                                    className="text-sm sm:text-base font-medium text-white hover:underline hover:text-purple-400"
+                                                >
+                                                    {info.value}
+                                                </a>
+                                            ) : (
+                                                <p className="text-sm sm:text-base font-medium text-white">{info.value}</p>
+                                            )}
                                         </div>
                                     </div>
                                 ))}
+
                             </div>
                         </div>
 
-                        <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto">
+                        <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto cursor-pointer">
                             <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                             Download Resume
                         </Button>
@@ -123,7 +139,20 @@ export default function AboutSection() {
                                         <h4 className="text-lg sm:text-xl font-semibold text-white mb-1 sm:mb-0">{edu.degree}</h4>
                                         <span className="text-purple-400 font-medium text-sm sm:text-base">{edu.year}</span>
                                     </div>
-                                    <p className="text-gray-200 font-medium mb-2 text-sm sm:text-base">{edu.institution}</p>
+                                    <p className="text-gray-200 font-medium mb-2 text-sm sm:text-base">
+                                        {edu.institution.link ? (
+                                            <a
+                                                href={edu.institution.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="underline hover:text-purple-300"
+                                            >
+                                                {edu.institution.name}
+                                            </a>
+                                        ) : (
+                                            edu.institution.name
+                                        )}
+                                    </p>
                                     <p className="text-gray-300 text-sm sm:text-base">{edu.description}</p>
                                 </div>
                                 {index < education.length - 1 && (
@@ -131,6 +160,7 @@ export default function AboutSection() {
                                 )}
                             </div>
                         ))}
+
                     </div>
                 </motion.div>
             </div>
