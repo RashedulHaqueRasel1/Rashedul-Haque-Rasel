@@ -29,7 +29,7 @@ const education = [
             name: "Kurigram Government College",
             link: "https://kurigramgc.college.gov.bd/"
         },
-        description: "Completed HSC in Commerce, focusing on foundational subjects related to accounting business, and economics.",
+        // description: "Completed HSC in Commerce, focusing on foundational subjects related to accounting business, and economics.",
     },
 ];
 

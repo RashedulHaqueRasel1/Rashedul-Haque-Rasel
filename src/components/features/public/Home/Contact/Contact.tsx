@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Mail, Phone, MapPin, Send, Linkedin, Github } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Linkedin, Github, Facebook } from "lucide-react"
 import { motion } from "framer-motion"
 // import { useToast } from "@/hooks/use-toast"
 
@@ -80,7 +80,12 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="font-medium text-white text-sm sm:text-base">Email</p>
-                  <p className="text-gray-300 text-sm sm:text-base">rasel@example.com</p>
+                  <a
+                    href="mailto:rashedulhaquerasel1@gmail.com"
+                    className="text-base font-medium text-white hover:underline hover:text-purple-400 transition-colors duration-300"
+                  >
+                    rashedulhaquerasel1@gmail.com
+                  </a>
                 </div>
               </div>
 
@@ -90,7 +95,12 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="font-medium text-white text-sm sm:text-base">Phone</p>
-                  <p className="text-gray-300 text-sm sm:text-base">+880 123 456 789</p>
+                  <a
+                    href="tel:+8801772582460"
+                    className="text-base font-medium text-white hover:underline hover:text-purple-400 transition-colors duration-300"
+                  >
+                    +880 17725-82460
+                  </a>
                 </div>
               </div>
 
@@ -100,7 +110,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="font-medium text-white text-sm sm:text-base">Location</p>
-                  <p className="text-gray-300 text-sm sm:text-base">Dhaka, Bangladesh</p>
+                  <p className="text-gray-300 text-sm sm:text-base">Savar, Dhaka, Bangladesh</p>
                 </div>
               </div>
             </div>
@@ -109,24 +119,43 @@ export default function ContactSection() {
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
               <div className="flex gap-3 sm:gap-4">
-                <Button size="sm" variant="outline" className="p-2 sm:p-3 bg-transparent">
+                <a
+                  href="https://www.linkedin.com/in/rashedul-haque-rasel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center p-2 sm:p-3 border border-purple-500 rounded-md bg-transparent text-purple-400 hover:bg-purple-600 hover:border-purple-600 transition-colors"
+                >
                   <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-                </Button>
-                <Button size="sm" variant="outline" className="p-2 sm:p-3 bg-transparent">
+                </a>
+
+                <a
+                  href="https://github.com/RashedulHaqueRasel1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center p-2 sm:p-3 border border-purple-500 rounded-md bg-transparent text-purple-400 hover:bg-purple-600 hover:border-purple-600 transition-colors"
+                >
                   <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                </Button>
-                <Button size="sm" variant="outline" className="p-2 sm:p-3 bg-transparent">
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-                </Button>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/Rashedul.haque.Rase1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center p-2 sm:p-3 border border-purple-500 rounded-md bg-transparent text-purple-400 hover:bg-purple-500 hover:border-purple-500 transition-colors"
+                >
+                  <Facebook className="w-4 h-4 sm:w-5 sm:h-5" />
+                </a>
               </div>
+
+
             </div>
 
             {/* Calendly Embed Placeholder */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-4 sm:p-6 rounded-lg shadow-lg">
+            {/* <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-4 sm:p-6 rounded-lg shadow-lg">
               <h4 className="text-lg font-semibold text-white mb-4">Schedule a Meeting</h4>
               <p className="text-gray-300 mb-4 text-sm sm:text-base">Book a 30-minute call to discuss your project</p>
               <Button className="w-full bg-purple-600 hover:bg-purple-700">Schedule Call</Button>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Contact Form */}
