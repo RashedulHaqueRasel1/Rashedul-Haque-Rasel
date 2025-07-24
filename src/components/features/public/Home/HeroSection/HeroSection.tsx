@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Download, Mail, ChevronDown } from "lucide-react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import DecryptingText from "@/components/ui/decrypting-text"
 import RotatingText from "@/components/ui/rotating-text"
 import { RiNodejsFill } from "react-icons/ri";
@@ -17,6 +18,7 @@ import {
     SiRedux,
     SiMongoose
 } from "react-icons/si";
+import Head from "next/head"
 
 
 const techStack = [
@@ -118,6 +120,57 @@ export default function HeroSection() {
             id="home"
             className="relative min-h-screen flex items-center justify-center pt-16 pb-8 px-4 overflow-hidden"
         >
+
+            {/* Head */}
+            <Head>
+                {/* Basic Meta */}
+                <title>Rashedul Haque Rasel — Full Stack Developer | Portfolio</title>
+                <meta
+                    name="description"
+                    content="Rashedul Haque Rasel is a passionate MERN Stack Developer building full-stack web apps with modern technologies like React, Next.js, Node.js, and MongoDB."
+                />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta charSet="UTF-8" />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://rashedul-haque-rasel.vercel.app/" />
+                <meta property="og:title" content="Rashedul Haque Rasel — MERN Stack Developer" />
+                <meta
+                    property="og:description"
+                    content="Explore the portfolio of Rashedul Haque Rasel — a Full Stack Developer skilled in React, Node.js, Express, MongoDB, Firebase & more."
+                />
+                <meta property="og:image" content="https://i.postimg.cc/rs253wmT/Rashedul-Haque-Rasel.png" />
+                <meta property="og:site_name" content="Rashedul Haque Rasel Portfolio" />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:url" content="https://rashedul-haque-rasel.vercel.app/" />
+                <meta name="twitter:title" content="Rashedul Haque Rasel — MERN Stack Developer" />
+                <meta
+                    name="twitter:description"
+                    content="Full Stack Developer crafting blazing fast websites & web apps using MERN stack."
+                />
+                <meta name="twitter:image" content="https://i.postimg.cc/rs253wmT/Rashedul-Haque-Rasel.png" />
+
+                {/* Canonical */}
+                <link rel="canonical" href="https://rashedul-haque-rasel.vercel.app/" />
+
+                {/* Favicon */}
+                <link rel="icon" href="/favicon.ico" />
+
+                {/* Author */}
+                <meta name="author" content="Rashedul Haque Rasel" />
+
+                {/* Social Profile links for search engine */}
+                <meta property="profile:username" content="Rashedul Haque Rasel" />
+                <meta property="profile:first_name" content="Rashedul" />
+                <meta property="profile:last_name" content="Haque Rasel" />
+
+                {/* Optional WhatsApp Link Meta (not supported by all) */}
+                <meta name="contact" content="+8801772582460" />
+            </Head>
+
             {/* Floating Background Icons - Responsive */}
             <div className="absolute inset-0 pointer-events-none">
                 {floatingIcons.map((item, index) => (
@@ -154,16 +207,18 @@ export default function HeroSection() {
                 >
                     {/* Profile Image - Responsive sizing */}
                     <div className="mb-6 sm:mb-8">
-                        <img
-                            src="https://i.postimg.cc/rs253wmT/Rashedul-Haque-Rasel.png?height=200&width=200"
+                        <Image
+                            src="https://i.postimg.cc/rs253wmT/Rashedul-Haque-Rasel.png"
                             alt="Rashedul Haque Rasel"
+                            width={192} // or 200
+                            height={192}
                             className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover border-4 border-purple-500 shadow-2xl"
                         />
                     </div>
 
                     {/* Main Heading - Responsive text sizing */}
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                        Hi, I'm{" "}
+                        Hi, I&#39;m{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 block sm:inline">
                             <DecryptingText
                                 targetText="Rashedul Haque"
@@ -180,8 +235,8 @@ export default function HeroSection() {
 
                     {/* Description - Responsive */}
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-                        Passionate full-stack developer creating modern web applications with cutting-edge technologies. Let's build
-                        something amazing together!
+                        Passionate full-stack developer creating modern web applications with cutting-edge technologies. Let&#39;s build something amazing together!
+
                     </p>
 
                     {/* CTA Buttons - Responsive layout */}

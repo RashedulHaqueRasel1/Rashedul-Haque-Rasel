@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowUp, Linkedin, Github, Mail, Phone, MapPin, Facebook } from "lucide-react"
+import { Linkedin, Github, Mail, Phone, MapPin, Facebook } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const quickLinks = [
@@ -12,10 +12,6 @@ const quickLinks = [
 ]
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
-
   return (
     <footer className="relative bg-[#0f172a] text-white pt-12 border-t border-white/10">
       <div className="container mx-auto px-4">
@@ -45,7 +41,7 @@ export default function Footer() {
                   <Github className="w-5 h-5" />
                 </Button>
               </a>
-              <a href="https://www.facebook.com/Rashedul.haque.Rase1/">
+              <a href="https://www.facebook.com/Rashedul.haque.Rase1/" target="_blank" rel="noreferrer">
                 <Button
                   size="icon"
                   variant="outline"
@@ -116,9 +112,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Rashedul Haque Rasel. All rights reserved.
           </p>
 
-          {/* Optional Scroll to Top Button */}
-          {/* 
-          <Button onClick={scrollToTop} size="sm" variant="ghost" className="text-white hover:bg-gray-800 mt-4 md:mt-0">
+          {/* Optional Scroll to Top Button - Uncomment to use */}
+          {/*
+          <Button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} size="sm" variant="ghost" className="text-white hover:bg-gray-800 mt-4 md:mt-0">
             <ArrowUp className="w-4 h-4 mr-1" />
             Back to Top
           </Button>

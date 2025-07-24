@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import { AnimatePresence } from "framer-motion"
 import Loader from "@/components/ui/loader"
 
-export default function loadingLayout({ children }: { children: React.ReactNode }) {
+export default function LoadingLayout({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {

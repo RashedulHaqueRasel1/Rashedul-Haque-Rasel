@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import { motion } from "framer-motion"
 import { getProjects } from "../../lib/project-data"
+import Image from "next/image"
 
 const filterOptions = ["All", "Fullstack", "Frontend"]
 
@@ -48,10 +49,12 @@ export default function ProjectsGrid({ showAll }: ProjectsGridProps) {
             className="bg-white/5 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all group border border-white/10 hover:border-white/20"
           >
             <div className="aspect-video relative overflow-hidden">
-              <img
+              <Image
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4 ">
                 {/* Live Demo Link */}

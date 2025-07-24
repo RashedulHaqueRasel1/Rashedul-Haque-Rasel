@@ -25,27 +25,22 @@ import {
   SiPostman,
   SiVercel,
   SiNetlify,
-  SiNpm,
-  SiPnpm,
 } from "react-icons/si";
+
 import {
   FaComments,
   FaClock,
   FaPuzzlePiece,
   FaUsers,
-  FaLightbulb,
-  FaHandsHelping,
   FaBrain,
   FaBalanceScale,
   FaUserTie,
-  FaHeart,
-  FaCheckCircle,
   FaHandshake,
-  FaSearch,
-  FaSmile,
-  FaBullseye,
 } from "react-icons/fa";
+
 import { Code, Server, Wrench, Users, Sparkles } from "lucide-react";
+import Head from "next/head";
+
 
 
 const skillCategories = [
@@ -121,6 +116,76 @@ const skillCategories = [
 export default function SkillsSection() {
   return (
     <section id="skills" className="py-12 sm:py-16 md:py-20 relative">
+
+      {/* Head */}
+      <Head>
+        {/* General Meta Tags */}
+        <title>Rashedul Haque Rasel - Full Stack Web Developer</title>
+        <meta name="title" content="Rashedul Haque Rasel - Full Stack Web Developer" />
+        <meta
+          name="description"
+          content="Explore the portfolio of Rashedul Haque Rasel, a full-stack web developer skilled in React, Next.js, Node.js, MongoDB, and more. Passionate about creating modern web applications."
+        />
+        <meta
+          name="keywords"
+          content="Rashedul Haque Rasel, web developer, full stack developer, React.js, Next.js, Node.js, Tailwind CSS, MongoDB, portfolio, Bangladesh developer"
+        />
+        <meta name="author" content="Rashedul Haque Rasel" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://rashedul-haque-rasel.vercel.app/" />
+
+        {/* Favicon (optional) */}
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rashedul-haque-rasel.vercel.app/" />
+        <meta property="og:title" content="Rashedul Haque Rasel - Full Stack Developer Portfolio" />
+        <meta
+          property="og:description"
+          content="Explore Rashedul's skills, education, and projects in web development, blending modern frontend and backend technologies."
+        />
+        <meta property="og:image" content="https://i.postimg.cc/qBNdJcLg/Rashedul-Haque-Rasel.jpg" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://rashedul-haque-rasel.vercel.app/" />
+        <meta name="twitter:title" content="Rashedul Haque Rasel - Full Stack Developer Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Passionate full-stack developer with experience in React, Next.js, Node.js, and MongoDB. Check out my latest work!"
+        />
+        <meta name="twitter:image" content="https://i.postimg.cc/qBNdJcLg/Rashedul-Haque-Rasel.jpg" />
+
+        {/* Social Profiles (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Rashedul Haque Rasel",
+              "url": "https://rashedul-haque-rasel.vercel.app/",
+              "image": "https://i.postimg.cc/qBNdJcLg/Rashedul-Haque-Rasel.jpg",
+              "sameAs": [
+                "https://www.facebook.com/Rashedul.haque.Rase1/",
+                "https://www.linkedin.com/in/rashedul-haque-rasel/",
+                "https://github.com/RashedulHaqueRasel1",
+                "https://wa.link/9ch9lg"
+              ],
+              "jobTitle": "Full Stack Web Developer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Web Wizards"
+              }
+            }),
+          }}
+        />
+      </Head>
+
+
+      {/* Skills Section */}
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button"
 import { Download } from "lucide-react"
 import { motion } from "framer-motion"
+import Image from "next/image"
+import Head from "next/head"
 
 const personalInfo = [
     { label: "Name", value: "Rashedul Haque Rasel", icon: "👤" },
@@ -37,6 +39,40 @@ const education = [
 export default function AboutSection() {
     return (
         <section id="about" className="py-12 sm:py-16 md:py-20 relative">
+
+            {/* Head */}
+            <Head>
+                <title>About Rashedul Haque Rasel | MERN Stack Developer</title>
+                <meta
+                    name="description"
+                    content="Get to know Rashedul Haque Rasel – a passionate MERN Stack developer from Bangladesh. Skilled in React, Node.js, Express, and MongoDB. Explore his journey, education, and personal background."
+                />
+                <meta name="author" content="Rashedul Haque Rasel" />
+                <meta name="keywords" content="Rashedul Haque Rasel, MERN Developer, Full Stack Developer, React Developer, Node.js Developer, JavaScript Developer, Bangladeshi Developer, Portfolio" />
+                <meta name="robots" content="index, follow" />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="About Rashedul Haque Rasel | MERN Stack Developer" />
+                <meta property="og:description" content="Meet Rashedul Haque Rasel – a skilled full stack web developer specializing in the MERN stack. Learn about his background, projects, and education." />
+                <meta property="og:url" content="https://rashedul-haque-rasel.vercel.app/about" />
+                <meta property="og:url" content="https://www.facebook.com/Rashedul.haque.Rase1/" />
+                <meta property="og:image" content="https://i.postimg.cc/qBNdJcLg/Rashedul-Haque-Rasel.jpg" />
+                <meta property="og:site_name" content="Rashedul Haque Rasel Portfolio" />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="About Rashedul Haque Rasel | MERN Stack Developer" />
+                <meta name="twitter:description" content="Explore the personal and professional journey of Rashedul Haque Rasel – a MERN stack developer from Bangladesh." />
+                <meta name="twitter:image" content="https://i.postimg.cc/qBNdJcLg/Rashedul-Haque-Rasel.jpg" />
+                <meta name="twitter:site" content="https://x.com/Rashedul_Rasel1" />
+
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://rashedul-haque-rasel.vercel.app/about" />
+            </Head>
+
+
+            {/* */}
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -60,7 +96,9 @@ export default function AboutSection() {
                         viewport={{ once: true }}
                         className="flex justify-center items-center order-2 lg:order-1 min-h-[20rem]"
                     >
-                        <img
+                        <Image
+                            width={400}
+                            height={400}
                             src="https://i.postimg.cc/qBNdJcLg/Rashedul-Haque-Rasel.jpg?height=400&width=400"
                             alt="About Rashedul Haque"
                             className="w-80 h-80 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-2xl object-cover shadow-2xl"
