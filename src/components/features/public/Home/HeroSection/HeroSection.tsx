@@ -250,14 +250,26 @@ export default function HeroSection() {
                                 Hire Me
                             </Button>
                         </a>
-                        <Button
+                        {/* <Button
                             size="lg"
                             variant="outline"
                             className="border-white/20 text-white hover:bg-white/10 hover:text-white bg-transparent w-full sm:w-auto cursor-pointer"
                         >
                             <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                             Download Resume
-                        </Button>
+                        </Button> */}
+
+                        <a href="/Rashedul_Haque_Rasel.pdf" download>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="border-white/20 text-white hover:bg-white/10 hover:text-white bg-transparent w-full sm:w-auto cursor-pointer"
+                            >
+                                <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                                Download Resume
+                            </Button>
+                        </a>
+
                     </div>
 
                     {/* Tech Stack - Responsive grid */}

@@ -152,10 +152,18 @@ export default function AboutSection() {
                             </div>
                         </div>
 
-                        <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto cursor-pointer">
+                        {/* <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto cursor-pointer">
                             <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                             Download Resume
-                        </Button>
+                        </Button> */}
+
+                        <a href="/Rashedul_Haque_Rasel.pdf" download>
+                            <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto cursor-pointer">
+                                <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                                Download Resume
+                            </Button>
+                        </a>
+                        
                     </motion.div>
                 </div>
 
