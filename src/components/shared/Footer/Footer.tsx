@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Linkedin, Github, Mail, Phone, MapPin, Facebook } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Linkedin, Github, Mail, Phone, MapPin, Facebook } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const quickLinks = [
   { name: "Home", href: "#home" },
@@ -9,7 +9,7 @@ const quickLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 export default function Footer() {
   return (
@@ -18,12 +18,19 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           {/* Brand Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-purple-400">Rashedul Haque Rasel</h3>
+            <h3 className="text-2xl font-bold mb-4 text-purple-400">
+              Rashedul Haque Rasel
+            </h3>
             <p className="text-gray-400 mb-5 max-w-xs leading-relaxed">
-              Full Stack Developer passionate about building dynamic and responsive web applications.
+              Full Stack Developer passionate about building dynamic and
+              responsive web applications.
             </p>
             <div className="flex gap-3">
-              <a href="https://www.linkedin.com/in/rashedul-haque-rasel/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.linkedin.com/in/rashedul-haque-rasel/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button
                   size="icon"
                   variant="outline"
@@ -32,7 +39,11 @@ export default function Footer() {
                   <Linkedin className="w-5 h-5" />
                 </Button>
               </a>
-              <a href="https://github.com/RashedulHaqueRasel1" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/RashedulHaqueRasel1"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button
                   size="icon"
                   variant="outline"
@@ -41,7 +52,11 @@ export default function Footer() {
                   <Github className="w-5 h-5" />
                 </Button>
               </a>
-              <a href="https://www.facebook.com/Rashedul.haque.Rase1/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.facebook.com/Rashedul.haque.Rase1/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button
                   size="icon"
                   variant="outline"
@@ -64,7 +79,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-purple-400">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-purple-400">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -81,7 +98,9 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-purple-400">Get In Touch</h4>
+            <h4 className="text-lg font-semibold mb-4 text-purple-400">
+              Get In Touch
+            </h4>
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-purple-400" />
@@ -109,7 +128,8 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-center border-t border-gray-800 py-4">
           <p className="text-gray-400 text-sm text-center flex justify-center md:text-left">
-            © {new Date().getFullYear()} Rashedul Haque Rasel. All rights reserved.
+            © {new Date().getFullYear()} Rashedul Haque Rasel. All rights
+            reserved.
           </p>
 
           {/* Optional Scroll to Top Button - Uncomment to use */}
@@ -122,5 +142,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

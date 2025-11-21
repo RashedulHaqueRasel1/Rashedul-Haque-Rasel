@@ -1,25 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
-import { motion } from "framer-motion"
-import { getProjects } from "../../lib/project-data"
-import Image from "next/image"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
+import { motion } from "framer-motion";
+import { getProjects } from "../../lib/project-data";
+import Image from "next/image";
 
-const filterOptions = ["All", "Fullstack", "Frontend"]
+const filterOptions = ["All", "Fullstack", "Frontend"];
 
 interface ProjectsGridProps {
-  showAll: boolean
+  showAll: boolean;
 }
 
 export default function ProjectsGrid({ showAll }: ProjectsGridProps) {
-  const [activeFilter, setActiveFilter] = useState("All")
-  const allProjects = getProjects()
-  const projects = showAll ? allProjects : allProjects.slice(0, 3)
+  const [activeFilter, setActiveFilter] = useState("All");
+  const allProjects = getProjects();
+  const projects = showAll ? allProjects : allProjects.slice(0, 6);
 
   const filteredProjects =
-    activeFilter === "All" ? projects : projects.filter((project) => project.category === activeFilter)
+    activeFilter === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
   return (
     <div>
@@ -30,7 +32,11 @@ export default function ProjectsGrid({ showAll }: ProjectsGridProps) {
               key={filter}
               variant={activeFilter === filter ? "default" : "outline"}
               onClick={() => setActiveFilter(filter)}
-              className={activeFilter === filter ? "bg-purple-600 hover:bg-purple-700" : ""}
+              className={
+                activeFilter === filter
+                  ? "bg-purple-600 hover:bg-purple-700"
+                  : ""
+              }
             >
               {filter}
             </Button>
@@ -78,13 +84,14 @@ export default function ProjectsGrid({ showAll }: ProjectsGridProps) {
                   <Github className="w-4 h-4 mr-2" />
                   Code
                 </a>
-
               </div>
             </div>
 
             <div className="p-6">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                <h3 className="text-xl font-semibold text-white">
+                  {project.title}
+                </h3>
                 <span className="px-2 py-1 bg-purple-500/20 text-purple-300 rounded text-sm border border-purple-500/30">
                   {project.category}
                 </span>
@@ -107,5 +114,5 @@ export default function ProjectsGrid({ showAll }: ProjectsGridProps) {
         ))}
       </div>
     </div>
-  )
+  );
 }
