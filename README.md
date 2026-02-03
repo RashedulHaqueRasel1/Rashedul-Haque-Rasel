@@ -24,7 +24,7 @@ My core stack includes **React.js, Next.js, Node.js, Express.js, MongoDB, Fireba
 
 ---
 
-## 🛠️ Knows Technologies 
+## 🛠️ Knows Technologies
 
 - **Frontend:** React.js, Next.js, JavaScript, Tailwind CSS, DaisyUI, HTML5, CSS3
 - **Backend:** Node.js, Express.js, MongoDB, Firebase
@@ -57,13 +57,11 @@ Each project is built with real-world functionality and showcases my problem-sol
 
 ---
 
-
-
 ## 📞 Contact Me
 
 I’m always open to collaboration, freelancing opportunities, or any exciting project ideas!
 
-📧 **Email:** rashedulhaquerasel1@gmail.com 
+📧 **Email:** rashedulhaquerasel1@gmail.com
 🌐 **Portfolio:** [rashedul-haque-rasel.vercel.app](https://rashedul-haque-rasel.vercel.app)
 
 ---
@@ -71,4 +69,3 @@ I’m always open to collaboration, freelancing opportunities, or any exciting p
 ## 🙌 Thanks for Visiting!
 
 If you like this project, please give it a ⭐ on GitHub!
-
