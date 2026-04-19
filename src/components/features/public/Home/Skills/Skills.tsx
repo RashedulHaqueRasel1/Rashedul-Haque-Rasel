@@ -262,8 +262,8 @@ export default function SkillsSection() {
           className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto"
         >
           {[
-            // { number: "3+", label: "Years Experience" },
-            { number: "10+", label: "Projects Completed" },
+            { number: "1+", label: "Years Experience" },
+            { number: "20+", label: "Projects Completed" },
             { number: "10+", label: "Technologies" },
             { number: "100%", label: "Client Satisfaction" },
           ].map((stat, index) => (
