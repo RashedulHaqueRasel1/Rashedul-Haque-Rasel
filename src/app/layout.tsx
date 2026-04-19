@@ -4,6 +4,7 @@ import { Cinzel, Inter } from "next/font/google";
 import Head from "next/head";   
 import type { Metadata } from "next";
 import { generatePersonSchema } from "@/lib/seo-utils";
+import Script from "next/script";
 
 // You can change this to your custom favicon icon, title and description
 export const metadata: Metadata = {
@@ -71,22 +72,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cinzel.variable}>
-      <head>
-        <meta
-          name="google-site-verification"
-          content="83790042a2bda3cc"
-        />
-      </head>
-      <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }}
-        />
-        <LoadingLayout>
-          {children}
-        </LoadingLayout>
-      </body>
-    </html>
+<html lang="en" className={cinzel.variable}>
+  <head>
+    <meta
+      name="google-site-verification"
+      content="83790042a2bda3cc"
+    />
+  </head>
+
+  <body>
+
+    {/* Google Analytics */}
+    <Script
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+      strategy="afterInteractive"
+    />
+
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BYDFY24LWE');
+      `}
+    </Script>
+
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }}
+    />
+
+    <LoadingLayout>
+      {children}
+    </LoadingLayout>
+
+  </body>
+</html>
   );
 }
