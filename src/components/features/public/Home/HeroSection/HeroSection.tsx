@@ -247,12 +247,12 @@ export default function HeroSection() {
               <DecryptingText
                 targetText="Rashedul Haque"
                 speed={6}
-                className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-cinzel"
-                style={{
-                  fontFamily: "var(--font-cinzel)",
-                  fontWeight: "700",
-                }}
-              />
+                className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
+                // style={{
+                //   fontFamily: "var(--font-cinzel)",
+                //   fontWeight: "700",
+                // }}
+              />  
             </span>
           </h1>
 
